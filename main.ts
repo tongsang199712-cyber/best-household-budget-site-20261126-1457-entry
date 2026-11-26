@@ -350,9 +350,13 @@ function main() {
   if (!existsSync(shotsSrc) || !statSync(shotsSrc).isDirectory()) fail('screenshots/ is missing from the repository');
 
   // A clean output directory: stale files from an earlier run must never
-  // leak into this hand-in.
-  rmSync(outDir, { recursive: true, force: true });
+  // leak into this hand-in. Clear the contents, not the directory itself:
+  // in the grader the output directory is a separate mount, and removing
+  // the mountpoint fails with EBUSY.
   mkdirSync(outDir, { recursive: true });
+  for (const entry of readdirSync(outDir)) {
+    rmSync(join(outDir, entry), { recursive: true, force: true });
+  }
 
   const appCount = copyTree(appSrc, join(outDir, 'app'));
   const shotCount = copyTree(shotsSrc, join(outDir, 'screenshots'));
