@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HearthLedger — Household Budget</title>
+<meta name="description" content="HearthLedger is a household budget site for the Alvarez family: a dashboard, a transaction ledger, budgets, bills, savings goals and reports — all working, all offline.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#/" aria-label="HearthLedger home">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 4 18h4v16h10v-9h4v9h10V18h4L20 4z" fill="#f4ead8"/><path d="M20 9.5 10 18h2.5v12h5v-8h5v8h5V18h2.5L20 9.5z" fill="#1d4d3b"/></svg>
+    <span><strong>HearthLedger</strong><small>Household budget, kept honest</small></span>
+  </a>
+  <nav id="main-nav" aria-label="Sections">
+    <a href="#/">Dashboard</a>
+    <a href="#/transactions">Transactions</a>
+    <a href="#/budgets">Budgets</a>
+    <a href="#/bills">Bills</a>
+    <a href="#/goals">Goals</a>
+    <a href="#/reports">Reports</a>
+  </nav>
+  <p class="household-tag"><span id="household-name">The Alvarez Family</span> · November 2026</p>
+</header>
+
+<main id="view" class="page"></main>
+
+<footer class="site-footer">
+  <p><strong>HearthLedger</strong> — a demo household budget site. All figures belong to the fictional Alvarez family and live only in this browser; nothing is sent anywhere. Built as a static site: no accounts, no tracking, no network requests.</p>
+  <p><button class="btn small" id="reset-demo" type="button">Reset demo data</button> · <span id="year">2026</span> · Made for the make.fun “best household budget site” bounty.</p>
+</footer>
+
+<script type="module" src="main.js"></script>
+<noscript><p class="noscript">HearthLedger needs JavaScript to show the Alvarez family’s budget — the numbers, charts and forms are all computed in your browser.</p></noscript>
+</body>
+</html>
